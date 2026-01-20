@@ -44,11 +44,11 @@ void low(){
 
 int main()
 {   
-    //button.mode(PullDown);
+    button.mode(PullDown);
     //button.rise(&high);
-    //button.rise(&press);
-    //int i = 0;
-    //blink.attach(&flip, periods[i]);
+    button.rise(&press);
+    int i = 0;
+    blink.attach(&flip, periods[i]);
 
     //button.fall(&low);
     
@@ -58,24 +58,21 @@ int main()
     
     while (true) {
 
-        /*if (c2){
+        if (c2){
             c2 = 0;
             i = (i + 1) % 5;
             blink.detach();
             blink.attach(&flip, periods[i]);
 
-        }*/
+        }
         
-        printf("Groupe 2 : salut! \n");
+        //printf("Groupe 2 : salut! \n");
         //ThisThread::sleep_for(PERIOD_MS / 2);
         //myled = !myled;     // chaque boucle pour le clignotement      
-        myled = button;  // poling
+        //myled = button;  // poling
         /*ThisThread::sleep_for(PERIOD_MS / 4);
         myled.write(0);*/     
-        /*if(c){
-            c=0;
-            printf("The time taken was %llu microseconds\n", duration_cast<microseconds>(t.elapsed_time()).count());
-        }*/
+       
         ThisThread::sleep_for(PERIOD_MS / 4);
     }
 }
